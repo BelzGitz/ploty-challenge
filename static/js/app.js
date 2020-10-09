@@ -122,30 +122,14 @@ function buildDashboard(name){
  // use  Object.entries to add each key and value pair to the panel
     Object.entries(metadata).forEach(function([key,value]) {
         demoInfo.append("panel-body").text(`${key}:${value} \n`);
+            
 
-
-// / / build a Gauge chart
-var wfreq = data.metadata["wfreq"]
-// .map(data=> data.wfreq)
-console.log(wfreq)
-
-
-
-    
     })
-
 
     }
 
     )}
    
-
-
-
-
-
-
-
 function optionChanged (name){
     buildDashboard(name)
 
