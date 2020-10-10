@@ -112,53 +112,13 @@
 
  // use  Object.entries to add each key and value pair to the panel
     Object.entries(metadata).forEach(function([key,value]) {
-        demoInfo.append("panel-body").text(`${key}:${value} \n`);
-
-
-// create gauge chart
-var metadatagc = data.metadatagc
-var wfreq = data.metadatagc.map(data => "wfreq" + data)
-console.log(`Washing Freq: ${wfreq}`)
-
-var data_gc= [
-	{
-		domain: { x: [0, 1], y: [0, 1] },
-		value: parseFloat(wfreq),
-		title: { text: "Weekly Washing Frequency" },
-		type: "indicator",
-        mode: "gauge+number",
-        
-        gauge:{axis:{range:[0-9]},
-                steps:[
-                    {range:[0-1], color:"cream"},
-                    {range:[1-2], color:"lightbrown"},
-                    {range:[2-3],color:"lime"},
-                    {range:[3-4],color:"lightgreen"},
-                    {range:[4-5],color:"brightgreen"},
-                    {range:[5-6],color:"brightgreen"},
-                    {range:[6-7],color:"green"},
-                    {range:[7-8],color:"darkgreen"},
-                    {range:[8-9],color:"darkgreen"},
-                ]}
-	}
-];
-
-var layout_gc = {
-     width: 700, 
-     height: 600,
-     margin: { t: 100, b:25, l:100, r:25 }
-     };
-Plotly.newPlot('gauge', data_gc, layout_gc);    
-
-
-
-
-
+        demoInfo.append("p").text(`${key}:${value} \n`);
+     
     })
 
-    }
+ }
 
-    )}
+ )};
    
 function optionChanged (name){
     buildDashboard(name)
